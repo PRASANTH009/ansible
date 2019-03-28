@@ -1,0 +1,31 @@
+
+---
+- name: remove an instance
+  hosts: localhost
+  vars:
+  - include_vars : group_vars/openstackvars.yml
+  tasks:
+    - name: remove an instance
+      os_server:
+        name: "{{vm1_name}}"
+        state: absent
+    - name: remove an instance
+      os_server:
+        name: "{{vm2_name}}"
+        state: absent
+    - name: remove network
+      os_network:
+        state: absent
+        name: "{{network_name}}"
+    - name: Remove subnet
+      os_subnet:
+        state: absent
+        name: "{{subnet_name}}"
+    - name: Remove router
+      os_router:
+        state: absent
+        name: "{{router_name}}"
+    - name: Remove security_group
+      os_security_group:
+      state: absent
+      name: "{{security_group_name}}"

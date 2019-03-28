@@ -1,0 +1,6 @@
+network_name : ansiblenet
+subnet_name : ansiblesub
+security_group_name : ansiblesecgr
+router_name : ansiblerouter
+vm1_name : ansible-webserver
+vm2_name : ansible-dbserver
